@@ -1,3 +1,3 @@
 # FE React Task
 
-##Webpack + React
+Webpack + React
