@@ -3,7 +3,7 @@ const HtmlPlugin = require("html-webpack-plugin");
 const MiniCssPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.jsx",
   devtool: "inline-source-map",
   mode: "development",
   devServer: {
@@ -29,9 +29,12 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   plugins: [
     new HtmlPlugin({
-      title: "Webpack Template",
+      title: "Marvellous",
       template: "index.html",
     }),
     new MiniCssPlugin(),

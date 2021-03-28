@@ -1,0 +1,20 @@
+$break-point: 760px;
+
+.title {
+  color: white;
+}
+
+.text {
+  color: #00d9d9;
+  font-weight: bold;
+}
+
+@media (min-width: $break-point) {
+  .text {
+    padding: 0 50% 0 0;
+  }
+
+  .heading {
+    text-align: left;
+  }
+}
