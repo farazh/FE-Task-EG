@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Heading } from "../components/heading";
 import { ItemHeader } from "../components/item-header";
-import { ItemColumn } from "./item-column";
 import { ItemControls } from "./item-controls";
+import { ColumnContainer } from "./item-column-container/container";
 import "./main.scss";
 
 const App = () => {
@@ -42,14 +42,6 @@ const App = () => {
     item.columnId === "1" ? setColumn1(newItems) : setColumn2(newItems);
   };
 
-  const visibleItems1 =
-    searchTerm === ""
-      ? column1
-      : column1.filter((item) => item.name.includes(searchTerm));
-  const visibleItems2 =
-    searchTerm === ""
-      ? column2
-      : column2.filter((item) => item.name.includes(searchTerm));
   return (
     <div className="main">
       <Heading />
@@ -67,15 +59,11 @@ const App = () => {
           />
         </div>
         <div className="columns">
-          <ItemColumn
-            columnId="1"
-            items={visibleItems1}
+          <ColumnContainer
+            column1={column1}
+            column2={column2}
             onItemDelete={onItemDelete}
-          />
-          <ItemColumn
-            columnId="2"
-            items={visibleItems2}
-            onItemDelete={onItemDelete}
+            searchTerm={searchTerm}
           />
         </div>
       </div>

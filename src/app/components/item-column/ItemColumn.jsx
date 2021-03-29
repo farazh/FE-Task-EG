@@ -1,6 +1,6 @@
 import React from "react";
-import { Item } from "../../components/item";
-import { ItemHeader } from "../../components/item-header";
+import { Item } from "../item";
+import { ItemHeader } from "../item-header";
 import "./ItemColumn.scss";
 
 export const ItemColumn = ({ columnId, items, onItemDelete }) => (

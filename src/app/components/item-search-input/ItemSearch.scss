@@ -31,7 +31,13 @@ label {
 .search .fa-search {
   position: absolute;
   top: 12px;
-  right: 50px;
+  right: 70px;
   font-size: 15px;
   color: white;
+}
+
+@media (min-width: 1024px) {
+  .search .fa-search {
+    right: 100px;
+  }
 }
