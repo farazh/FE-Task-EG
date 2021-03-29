@@ -26,15 +26,19 @@
   padding-bottom: 20px;
   padding-top: 10px;
 }
-.column {
-  width: 30%;
+.controls {
+  flex-grow: 1;
 }
 @media (max-width: 640px) {
   .item-table {
     flex-direction: column;
   }
-  .column {
-    width: 100%;
+  .controls {
     padding-bottom: 20px;
   }
+}
+
+.columns {
+  display: flex;
+  flex-grow: 2;
 }

@@ -1,4 +1,38 @@
-.item-controls {
+.item-controls-desktop {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 640px) {
+  .item-controls-mobile {
+    flex-direction: row;
+    display: flex;
+  }
+  .item-controls-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .item-controls-mobile {
+    display: none;
+  }
+}
+
+.enter-item-control {
+  padding-bottom: 10px;
+}
+.add-item-control {
+  padding-top: 190px;
+  padding-bottom: 30px;
+}
+
+.item-control-child-mobile {
+  flex: 1;
+}
+.add-item-control-mobile {
+  flex: 1;
+}
+
+.padding {
+  padding: 3px;
 }

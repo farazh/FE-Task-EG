@@ -15,7 +15,10 @@ const App = () => {
 
   const onItemNameChange = (name) => setItemName(name);
   const onColumnSelect = (columnId) => setColumnId(columnId);
-  const onItemSearch = (searchTerm) => setSearchTerm(searchTerm);
+
+  const onItemSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
+  };
 
   const onItemAdd = () => {
     if (!itemName || columnId === "0") {
@@ -38,10 +41,15 @@ const App = () => {
     const newItems = items.filter((i) => i.id !== item.id);
     item.columnId === "1" ? setColumn1(newItems) : setColumn2(newItems);
   };
-  useEffect(() => {
-    console.log(column1);
-    console.log(column2);
-  });
+
+  const visibleItems1 =
+    searchTerm === ""
+      ? column1
+      : column1.filter((item) => item.name.includes(searchTerm));
+  const visibleItems2 =
+    searchTerm === ""
+      ? column2
+      : column2.filter((item) => item.name.includes(searchTerm));
   return (
     <div className="main">
       <Heading />
@@ -49,7 +57,7 @@ const App = () => {
         <ItemHeader text="ADD AN ITEM" />
       </div>
       <div className="item-table">
-        <div className="column">
+        <div className="controls">
           <ItemControls
             onItemAdd={onItemAdd}
             onItemSearch={onItemSearch}
@@ -58,17 +66,15 @@ const App = () => {
             nameValue={itemName}
           />
         </div>
-        <div className="column">
+        <div className="columns">
           <ItemColumn
-            columnId={"1"}
-            items={column1}
+            columnId="1"
+            items={visibleItems1}
             onItemDelete={onItemDelete}
           />
-        </div>
-        <div className="column">
           <ItemColumn
-            columnId={"1"}
-            items={column2}
+            columnId="2"
+            items={visibleItems2}
             onItemDelete={onItemDelete}
           />
         </div>

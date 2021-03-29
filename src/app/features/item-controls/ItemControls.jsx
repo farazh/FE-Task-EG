@@ -12,10 +12,41 @@ export const ItemControls = ({
   onItemSearch,
   nameValue,
 }) => (
-  <div className="item-controls">
-    <ItemInput onItemNameChange={onItemNameChange} nameValue={nameValue} />
-    <ItemDropDown onColumnSelect={onColumnSelect} />
-    <ItemButton onItemAdd={onItemAdd} />
-    <ItemSearch onItemSearch={onItemSearch} />
-  </div>
+  <>
+    <div className="item-controls-desktop">
+      <div className="item-control-child enter-item-control">
+        <ItemInput onItemNameChange={onItemNameChange} nameValue={nameValue} />
+      </div>
+      <div className="item-control-child">
+        <ItemDropDown onColumnSelect={onColumnSelect} />
+      </div>
+      <div className="item-control-child add-item-control">
+        <ItemButton onItemAdd={onItemAdd} />
+      </div>
+      <div className="item-control-child">
+        <ItemSearch onItemSearch={onItemSearch} />
+      </div>
+    </div>
+    <div className="item-controls-mobile">
+      <div className="item-control-child-mobile">
+        <div className="padding">
+          <ItemInput
+            onItemNameChange={onItemNameChange}
+            nameValue={nameValue}
+          />
+        </div>
+        <div className="padding">
+          <ItemDropDown onColumnSelect={onColumnSelect} />
+        </div>
+      </div>
+      <div className="item-control-child-mobile add-item-control-mobile">
+        <div className="padding">
+          <ItemButton onItemAdd={onItemAdd} />
+        </div>
+        <div className="padding">
+          <ItemSearch onItemSearch={onItemSearch} />
+        </div>
+      </div>
+    </div>
+  </>
 );

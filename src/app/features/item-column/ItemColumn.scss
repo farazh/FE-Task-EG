@@ -1,6 +1,10 @@
 .item-column {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  border: 3px solid white;
+  overflow-y: auto;
+  height: 400px;
 }
 
 .column-child:nth-child(even) {
