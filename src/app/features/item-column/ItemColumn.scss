@@ -1,4 +1,14 @@
-.column {
+.item-column {
   display: flex;
   flex-direction: column;
+}
+
+.column-child:nth-child(even) {
+  color: #708090;
+  background-color: #dbd7d2;
+}
+
+.column-child:nth-child(odd) {
+  color: #dbd7d2;
+  background-color: #708090;
 }

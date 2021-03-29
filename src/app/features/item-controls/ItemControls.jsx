@@ -5,11 +5,17 @@ import { ItemInput } from "../../components/item-input";
 import { ItemSearch } from "../../components/item-search-input";
 import "./ItemControls.scss";
 
-export const ItemControls = () => (
+export const ItemControls = ({
+  onColumnSelect,
+  onItemNameChange,
+  onItemAdd,
+  onItemSearch,
+  nameValue,
+}) => (
   <div className="item-controls">
-    <ItemInput onInputChange={() => 1} />
-    <ItemDropDown onColumnSelect={() => 1} />
-    <ItemButton onItemAdd={() => 1} />
-    <ItemSearch onItemSearch={() => 1} />
+    <ItemInput onItemNameChange={onItemNameChange} nameValue={nameValue} />
+    <ItemDropDown onColumnSelect={onColumnSelect} />
+    <ItemButton onItemAdd={onItemAdd} />
+    <ItemSearch onItemSearch={onItemSearch} />
   </div>
 );

@@ -11,11 +11,7 @@ export const ItemColumn = ({ columnId, items, onItemDelete }) => (
     <>
       {items.map((item) => (
         <div className="column-child">
-          <Item
-            itemId={item.id}
-            itemName={item.name}
-            onItemDelete={onItemDelete}
-          />
+          <Item key={item.id} item={item} onItemDelete={onItemDelete} />
         </div>
       ))}
     </>
