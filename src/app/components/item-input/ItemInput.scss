@@ -1,2 +1,16 @@
-.item-header {
+.myInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  background-color: #91a3b0;
+  border: 2px solid white;
+  color: white;
+  padding: 10px;
+}
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  color: white;
 }

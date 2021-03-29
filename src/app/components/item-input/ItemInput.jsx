@@ -1,4 +1,10 @@
 import React from "react";
-// import "./ItemInput.scss";
+import "./ItemInput.scss";
 
-export const ItemInput = ({ text }) => <div className="input">{text}</div>;
+export const ItemInput = ({ onInputChange }) => (
+  <input
+    className="myInput"
+    placeholder="ENTER ITEM"
+    onChange={onInputChange}
+  ></input>
+);
