@@ -13,6 +13,8 @@
 - yarn install
 - yarn start
 
+(Recommended node version 12 and above)
+
 # Test
 
 - yarn test
