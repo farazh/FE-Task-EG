@@ -15,6 +15,11 @@ export const itemReducer = (state = initialState, action) => {
         items: action.items,
       };
     }
+
+    // TODO
+    // logic is in two places, can be cleaned up by
+    // completely replacing state from localstorage
+    // on every add and delete
     case ADD_ITEM.SUCCESS: {
       const columnId = action.item.columnId;
       return {

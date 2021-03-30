@@ -7,6 +7,8 @@ import {
 } from "./utils";
 
 function* loadItems() {
+  // fetching from localstorage used as an example
+  // to demonstrate redux-saga and API implementation
   const items = yield call(getItemsFromLocalStorage);
   yield put({ type: LOAD_ITEMS.SUCCESS, items: items });
 }
