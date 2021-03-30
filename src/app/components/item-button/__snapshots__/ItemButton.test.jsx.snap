@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemButton tests should match snapshot 1`] = `
+<button
+  className="myButton"
+  onClick={[Function]}
+>
+  ADD ITEM
+</button>
+`;
