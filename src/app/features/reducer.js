@@ -1,4 +1,4 @@
-import { ADD_ITEM, DELETE_ITEM, SET_SEARCH_TERM } from "./actions";
+import { LOAD_ITEMS, ADD_ITEM, DELETE_ITEM, SET_SEARCH_TERM } from "./actions";
 
 const initialState = {
   items: {
@@ -9,7 +9,13 @@ const initialState = {
 };
 export const itemReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_ITEM: {
+    case LOAD_ITEMS.SUCCESS: {
+      return {
+        ...state,
+        items: action.items,
+      };
+    }
+    case ADD_ITEM.SUCCESS: {
       const columnId = action.item.columnId;
       return {
         ...state,
@@ -19,7 +25,7 @@ export const itemReducer = (state = initialState, action) => {
         },
       };
     }
-    case DELETE_ITEM: {
+    case DELETE_ITEM.SUCCESS: {
       const columnId = action.columnId;
       const itemId = action.itemId;
       const newItems = state.items[columnId].filter(

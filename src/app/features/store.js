@@ -1,11 +1,19 @@
-import { createStore } from "redux";
+import { compose, createStore, applyMiddleware } from "redux";
 import { itemReducer } from "./reducer";
+import createSagaMiddleware from "redux-saga";
+import mySaga from "./item-columns/saga";
 
 const getStore = () => {
+  const sagaMiddleware = createSagaMiddleware();
+  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    : compose;
   const store = createStore(
     itemReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeEnhancers(applyMiddleware(sagaMiddleware))
   );
+
+  sagaMiddleware.run(mySaga);
   return store;
 };
 

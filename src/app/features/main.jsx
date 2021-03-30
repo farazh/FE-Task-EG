@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Heading } from "../components/heading";
 import { ItemHeader } from "../components/item-header";
 import { ItemControls } from "./item-controls";
 import ColumnContainer from "./item-columns/container";
-import { addItem, setSearchTerm } from "./actions";
+import { addItem, loadItems, setSearchTerm } from "./actions";
 import { useDispatch } from "react-redux";
 import "./main.scss";
 
 const App = () => {
-  const [itemId, setItemId] = useState(1);
   const [itemName, setItemName] = useState("");
   const [columnId, setColumnId] = useState("1");
   const dispatch = useDispatch();
@@ -25,15 +24,17 @@ const App = () => {
       return;
     }
     const item = {
-      id: itemId,
       name: itemName,
       columnId: parseInt(columnId),
     };
 
     dispatch(addItem(item));
     setItemName("");
-    setItemId(itemId + 1);
   };
+
+  useEffect(() => {
+    dispatch(loadItems());
+  }, []);
 
   return (
     <div className="main">
