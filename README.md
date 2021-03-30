@@ -1,5 +1,18 @@
 # FE React Task
 
-Webpack + React
+- Webpack
+- Babel
+- React
+- Redux
+- Redux-saga
+- Jest
+- Enzyme
 
-yarn install + yarn start
+# Run
+
+- yarn install
+- yarn start
+
+# Test
+
+- yarn test
